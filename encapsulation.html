@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OOP #2 - Encapsulation</title>
+  </head>
+  <body>
+    <h1>Sistem Login Sederhana dengan Class</h1>
+    <script>
+      class User {
+        #password; // private → tidak bisa diakses dari luar
+
+        constructor(username, password) {
+          this.username = username;
+          this.#password = password;
+        }
+
+        // Kontrol akses: login hanya lewat method ini
+        login(inputPassword) {
+          if (inputPassword === this.#password) {
+            return "Login berhasil!";
+          } else {
+            return "Password salah!";
+          }
+        }
+
+        // Ganti password dengan validasi
+        changePassword(oldPassword, newPassword) {
+          if (oldPassword === this.#password) {
+            this.#password = newPassword;
+            return "Password berhasil diganti!";
+          } else {
+            return "Password lama salah!";
+          }
+        }
+      }
+
+      // ====== Coba jalankan ======
+      const user1 = new User("Syahrul", "1234");
+
+      console.log(user1.login("1234")); // ✅ Login berhasil!
+      console.log(user1.login("2345")); // ❌ Password salah!
+      console.log(user1.changePassword("1234", "abcd")); // ✅ Password berhasil diganti
+      console.log(user1.login("abcd")); // ✅ Login berhasil!
+    </script>
+  </body>
+</html>
