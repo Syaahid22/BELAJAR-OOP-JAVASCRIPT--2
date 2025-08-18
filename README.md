@@ -44,7 +44,7 @@ Langkah Pertama:
 Kita perlu membuat sebuah class bernama User, class ini memiliki properties username (public) dan password (private) seperti berikut:
   Di dalam class user kita perlu membuat sebuah constructor sebagai tempat menyiapkan nilai awal dan aturan dasar sebuah object saat pertama kali dibuat. 
   Constructor berisi properti username untuk menyimpan nama user dan password untuk menyimpan password user, dan kita bisa meletakan parameter dalam constructor tersebut.
-  ```
+  ``` javascript
       class User {
         #password; // private → tidak bisa diakses dari luar
         constructor(username, password) {
