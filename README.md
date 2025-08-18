@@ -44,13 +44,14 @@ Langkah Pertama:
 Kita perlu membuat sebuah class bernama User, class ini memiliki properties username (public) dan password (private) seperti berikut:
   Di dalam class user kita perlu membuat sebuah constructor sebagai tempat menyiapkan nilai awal dan aturan dasar sebuah object saat pertama kali dibuat. 
   Constructor berisi properti username untuk menyimpan nama user dan password untuk menyimpan password user, dan kita bisa meletakan parameter dalam constructor tersebut.
+  ```
       class User {
         #password; // private → tidak bisa diakses dari luar
         constructor(username, password) {
           this.username = username;
           this.#password = password;
         }
-
+```
 Properti password kita buat tidak berada di dalam constructor karena ini merupakan sebuah private field. Dengan begitu sistem tau bahwa setiap object User memiliki private field yaitu #password. 
 Sesuai dengan keamanan data yang dimaksud dalam konsep enkapsulasi, dimana password user tidak bisa diakses langsung dari luar class, karena disimpan dalam private field #password.
 
